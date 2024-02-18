@@ -1,10 +1,22 @@
 import './App.css';
 import logo1 from './imagenes/osiris.png';
 import Boton from './componentes/boton.js';
+import BotonClear from './componentes/boton-c.js';
+import Pantalla from './componentes/pantalla.js';
+import { useState } from 'react';
 
 function App() {
+
+  const [input, setInput] = useState('');
+
+  const agregarInput = val => {
+    setInput(input + val);
+  };
+
   return (
     <div className='App'>
+
+      <div className='cont-calc'>
       <div className='logo1-cont'>
         <img
           src={logo1}
@@ -12,42 +24,38 @@ function App() {
           alt='logo1' />
       </div>
 
-      <div className='cont-calc'>
+        <Pantalla input ={input}/>
+
         <div className='fila'>
-          <Boton>7</Boton>
-          <Boton>8</Boton>
-          <Boton>9</Boton>
-          <Boton>x</Boton>
+          <Boton manejarClics={agregarInput}>7</Boton>
+          <Boton manejarClics={agregarInput}>8</Boton>
+          <Boton manejarClics={agregarInput}>9</Boton>
+          <Boton manejarClics={agregarInput}>%</Boton>
         </div>
         <div className='fila'>
-          <Boton>7</Boton>
-          <Boton>8</Boton>
-          <Boton>9</Boton>
-          <Boton>x</Boton>
+          <Boton manejarClics={agregarInput}>7</Boton>
+          <Boton manejarClics={agregarInput}>8</Boton>
+          <Boton manejarClics={agregarInput}>9</Boton>
+          <Boton manejarClics={agregarInput}>x</Boton>
         </div>
         <div className='fila'>
-          <Boton>4</Boton>
-          <Boton>5</Boton>
-          <Boton>6</Boton>
-          <Boton>-</Boton>
+          <Boton manejarClics={agregarInput}>4</Boton>
+          <Boton manejarClics={agregarInput}>5</Boton>
+          <Boton manejarClics={agregarInput}>6</Boton>
+          <Boton manejarClics={agregarInput}>-</Boton>
         </div>
         <div className='fila'>
-          <Boton>1</Boton>
-          <Boton>2</Boton>
-          <Boton>3</Boton>
-          <Boton>+</Boton>
+          <Boton manejarClics={agregarInput}>1</Boton>
+          <Boton manejarClics={agregarInput}>2</Boton>
+          <Boton manejarClics={agregarInput}>3</Boton>
+          <Boton manejarClics={agregarInput}>+</Boton>
         </div>
         <div className='fila'>
-          <Boton>0</Boton>
-          <Boton>,</Boton>
-          <Boton>=</Boton>
-          <Boton>%</Boton>
+          <Boton manejarClics={agregarInput}>0</Boton>
+          <Boton manejarClics={agregarInput}>,</Boton>
+          <BotonClear manejarClear={()=> setInput('')}>C</BotonClear>
+          <Boton manejarClics={agregarInput}>=</Boton>
         </div>
-
-
-
-
-
       </div>
     </div>
   );

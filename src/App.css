@@ -11,24 +11,25 @@
 }
 
 .logo1-cont{
-  width: 100%;
-  height: auto;
-  margin: 8px;
+  width: auto;
+  margin: 4px;
+  margin-top: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: blue;
+ 
 }
 
 .logo1{
-  height: 100px;
+  width: 200px;
+  height: 50px;
 }
 
 .cont-calc{
   width: 400px;
-  height: 600px;
+  height: auto;
   padding: 14px;
-  background-color: aqua;
+  background-color: gray;
   border-radius: 20px;
   border: 5px solid white;
 }
@@ -38,9 +39,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: blueviolet;
-}
-
-.Boton{
-  width: 2px;
 }
